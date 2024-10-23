@@ -23,7 +23,18 @@
     "baseUrl": "./src",  // Make sure this points to the 'src' directory
     "paths": {
       "@RegularButtonContext/*": ["context/components/common/buttons/RegularButtonContext"],
-      "@ContentModalContext/*": ["context/components/common/modals/ContentModalContext"]
+      "@IRegularButtonProps/*": ["types/components/common/buttons/IRegularButtonProps"],
+      "@RegularButton/*": ["components/common/buttons/RegularButton"],
+      "@ContentModalContext/*": ["context/components/common/modals/ContentModalContext"],
+      "@IApiBodyResponse/*": ["types/common/IApiBodyResponse"],
+      "@ApiConstants/*": ["enums/ApiConstants"],
+      "@AxiosBasicAuth/*": ["utils/AxiosBasicAuth"],
+      "@AxiosBearer/*": ["utils/AxiosBearer"],
+      "@AuthenticationService/*": ["services/AuthenticationService"],
+      "@MobileSuitsService/*": ["services/pages/MobileSuitsService"],
+      "@IMobileSuits/*": ["types/pages/MobileSuits/*"],
+      "@PaginatedTable/*": ["components/common/tables/PaginatedTable"],
+      "@FormatDateTime/*": ["utils/DateHelper"],
     },
   },
   "include": ["src"]

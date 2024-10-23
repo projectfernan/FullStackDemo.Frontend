@@ -1,4 +1,4 @@
-const About = () => {
+const AboutPage = () => {
     return(
         <>
             <h5 className="mb-4 text-gray-800">About</h5>
@@ -6,4 +6,4 @@ const About = () => {
     )
 }
 
-export default About
+export default AboutPage

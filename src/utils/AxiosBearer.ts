@@ -1,24 +1,29 @@
 import axios from 'axios';
 
 // Create a default Axios instance
-const axiosInstance = axios.create({
+const AxiosBearer = axios.create({
     baseURL: import.meta.env.VITE_API_BASE_URL, // Set a base URL if needed
     headers: {
         'Content-Type': 'application/json',
     },
 });
 
-// Request interceptor to attach bearer tokens
-axiosInstance.interceptors.request.use(
+// Request interceptor to attach bearer tokens or basic auth
+AxiosBearer.interceptors.request.use(
     (config) => {
+        // Check for bearer token in localStorage
         const localBearer = localStorage.getItem("bearer");
+
         if (localBearer) {
             const bearer = JSON.parse(localBearer);
             if (bearer?.token) {
                 config.headers['Authorization'] = `Bearer ${bearer.token}`;
+                return config; // Exit early if bearer token is present
             }
         }
-        return config;
+        
+        console.log('bearer_config',config);
+        return config; 
     },
     (error) => {
         return Promise.reject(error);
@@ -26,7 +31,7 @@ axiosInstance.interceptors.request.use(
 );
 
 // Response interceptor for error handling
-axiosInstance.interceptors.response.use(
+AxiosBearer.interceptors.response.use(
     (response) => response,
     (error) => {
         const customError = {
@@ -42,16 +47,16 @@ axiosInstance.interceptors.response.use(
 
 export const makeRequest = async (method: 'GET' | 'POST' | 'PUT' | 'DELETE', url: string, data?: any) => {
     try {
-        const response = await axiosInstance({
+        const response = await AxiosBearer({
             method,
             url,
             data,
         });
         return response.data; // Return the response data
     } catch (error) {
-        console.log("makeRequest", error);
+        console.log("AxiosBearer makeRequest", error);
         return error; // This will be the custom error format returned from the interceptor
     }
 };
 
-export default axiosInstance;
+export default AxiosBearer;

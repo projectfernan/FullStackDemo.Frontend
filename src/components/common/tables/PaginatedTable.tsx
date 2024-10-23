@@ -1,4 +1,3 @@
-import {useEffect, useRef} from "react";
 import { IPaginatedTableProps } from '../../../types/components/common/tables/IPaginatedTableProps';
  
 export const PaginatedTable = (props: IPaginatedTableProps) => {
@@ -7,15 +6,9 @@ export const PaginatedTable = (props: IPaginatedTableProps) => {
     const pageCount = (props.activePage * props.pageLength) / props.pageLength;
     const showStart = (pageCount + 1);
     const showEnd = props.activePage == 0 ? 
-                        props.pageLength : 
+                        (props.pageLength > props.maxPage ? props.maxPage : props.pageLength) : 
                             (props.activePage + props.pageLength) > props.maxPage ? 
                                 props.maxPage : (props.activePage + props.pageLength);
-
-    const inputPage = useRef<HTMLInputElement | any>(null);
-    
-    useEffect(()=>{
-        inputPage.current.value = 1;
-    },[]);
 
     return(
         <>
