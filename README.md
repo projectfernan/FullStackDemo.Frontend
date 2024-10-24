@@ -1,50 +1,59 @@
-# React + TypeScript + Vite
+# Fullstack Demo Project (React Front-End)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the front-end part of a full-stack demo project, showcasing various features and best practices using **React**. The project demonstrates CRUD operations, form management, data pagination, and state handling, along with clean architecture principles.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Form Handling**: Manage forms with `react-hook-form` and validate them with `Zod`.
+- **Pagination**: Custom-built paginated table using React event handlers and state management for smoother navigation.
+- **State Management**: Managed using React’s `useState`, `useEffect`, and `useContext` to handle application data efficiently.
+- **Modals and Buttons**: Modal dialogs for user interactions with reusable button components.
+- **Props Drilling Avoidance**: React’s `createContext` and `useContext` are used to avoid props drilling in deeply nested components.
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React** (with TypeScript)
+- **React Hook Form** (for form management)
+- **Zod** (for form validation)
+- **Axios** (for API requests)
+- **Bootstrap** (for UI components)
 
-- Configure the top-level `parserOptions` property like this:
+## Setup and Installation
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Prerequisites
+
+- Node.js (version 18 or higher)
+- Git
+
+### Steps
+
+1. **Clone the repository**:
+```bash
+   git clone https://github.com/yourusername/FullStackDemo.Frontend.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+2. Navigate to the project directory:
+```bash
+  cd FullStackDemo.WebReact
 ```
+
+3. Install dependencies:
+```bash
+   npm install
+```
+
+4. Additional package installations: Install the required packages individually if not installed automatically:
+```bash
+   npm install react-router-dom
+   npm install react-bootstrap bootstrap
+   npm install --save-dev @types/node
+   npm install axios
+   npm install zod react-hook-form @hookform/resolvers
+```
+5. Backend Setup: Ensure that the backend API is running by following the instructions here: [FullStackDemo Backend](https://github.com/projectfernan/FullStackDemo.Backend)    The frontend will not function correctly without the backend service running.
+
+6. Run the React app:
+```bash
+   npm run dev
+```
+The app will run on http://localhost:5173 by default.

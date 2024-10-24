@@ -107,45 +107,45 @@ const GetMobileSuits = async () => {
     // Button Configuration
     // Button to open the "Create Mobile Suit" modal
     const addButton: IRegularButtonProps = {
-    buttonClass: 'btn-success',
-    buttonName: 'Add',
-    buttonIconClass: 'fas fa-plus',
-    buttonHandleClick: () => setShowModal(true),
+        buttonClass: 'btn-success',
+        buttonName: 'Add',
+        buttonIconClass: 'fas fa-plus',
+        buttonHandleClick: () => setShowModal(true),
     };
 
     // Button to save the mobile suit data
     const modalSaveButton: IRegularButtonProps = {
-    buttonClass: 'btn-primary',
-    buttonName: 'Save',
-    buttonIconClass: 'fas fa-save',
-    buttonHandleClick: () => formMethods.handleSubmit(onSubmit, onError)(),
+        buttonClass: 'btn-primary',
+        buttonName: 'Save',
+        buttonIconClass: 'fas fa-save',
+        buttonHandleClick: () => formMethods.handleSubmit(onSubmit, onError)(),
     };
 
     // Button to close the modal
     const modalCloseButton: IRegularButtonProps = {
-    buttonClass: 'btn-secondary',
-    buttonName: 'Close',
-    buttonIconClass: 'fas fa-times-circle',
-    buttonHandleClick: () => setShowModal(false),
+        buttonClass: 'btn-secondary',
+        buttonName: 'Close',
+        buttonIconClass: 'fas fa-times-circle',
+        buttonHandleClick: () => setShowModal(false),
     };
 
     // Modal Configuration for Creating Mobile Suit
     const modalCreate: IContentModalProps = {
-    modalTitle: "Add New Mobile Suit",
-    modalClassSize: "lg",
-    show: showModal,
-    onHide: handleOnHide,
-    bodyContent: (
-        <MobileSuitFormSubmit
-        ModelCode=""
-        ModelName=""
-        OperatingSystem=""
-        PowerOutput=""
-        Armor=""
-        Height=""
-        Weight=""
-        Manufacturer=""
-        />
+        modalTitle: "Add New Mobile Suit",
+        modalClassSize: "lg",
+        show: showModal,
+        onHide: handleOnHide,
+        bodyContent: (
+            <MobileSuitFormSubmit
+            ModelCode=""
+            ModelName=""
+            OperatingSystem=""
+            PowerOutput=""
+            Armor=""
+            Height=""
+            Weight=""
+            Manufacturer=""
+            />
     ),
     footerButtons: (
         <>
@@ -163,16 +163,17 @@ const GetMobileSuits = async () => {
     // useEffect Hooks
     // Fetch Mobile Suits when page or search changes
     useEffect(() => {
-    if (!search) setSearch(null);
-    if (search && search.trim() !== "") setPage(0);
-    GetMobileSuits();
+        if (!search) setSearch(null);
+        if (search && search.trim() !== "") setPage(0);
+        
+        GetMobileSuits();
     }, [page, search]);
 
     // Update navigation buttons state (disabled or enabled) based on page
     useEffect(() => {
-    setDisabledPrev(page === 0);
-    const totalPages = Math.ceil(maxPageRef.current / length);
-    setDisabledNext(page >= totalPages - 1);
+        setDisabledPrev(page === 0);
+        const totalPages = Math.ceil(maxPageRef.current / length);
+        setDisabledNext(page >= totalPages - 1);
     }, [page, length, maxPage]);
 
     return(
