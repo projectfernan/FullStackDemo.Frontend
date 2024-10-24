@@ -1,4 +1,4 @@
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes, useNavigate, Navigate  } from 'react-router-dom';
 import { useEffect } from 'react';
 
 import './assets/bootstrap/admin2-temp/admin2-css/sb-admin-2.min.css';
@@ -60,6 +60,7 @@ function App() {
                     <div className="container-fluid">
                         {/* render page here */}
                         <Routes>
+                            <Route path="/" element={<Navigate to="/MobileSuits" replace />} />
                             <Route path="/MobileSuits" element={<MobileSuitsPage />} />
                             <Route path="/About" element={<AboutPage />} />
                         </Routes>

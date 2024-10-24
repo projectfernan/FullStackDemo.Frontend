@@ -6,7 +6,7 @@ const PageFoorter = () => {
             <div className="container my-auto">
                 <div className="copyright text-center my-auto">
                     <span id="sr"></span>
-                    <span>&copy; 2024 C.O.M.P.S. by <a href="https://github.com/projectfernan" target="_blank">Project Fernan</a></span>
+                    <span>&copy; 2024 C.O.M.P.S. by <a href="https://github.com/stars/projectfernan/lists/fullstack-demo-project" target="_blank">Fernan Cabrera</a></span>
                 </div>
 
             </div>

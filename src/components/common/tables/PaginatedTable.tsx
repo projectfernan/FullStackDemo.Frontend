@@ -4,11 +4,13 @@ export const PaginatedTable = (props: IPaginatedTableProps) => {
 
     const tableHeader = props.header || (props.data.length > 0 ? Object.keys(props.data[0]) : []);
     const pageCount = (props.activePage * props.pageLength) / props.pageLength;
-    const showStart = (pageCount + 1);
+    const showStart = (props.maxPage > 0 ? pageCount + 1 : 0);
     const showEnd = props.activePage == 0 ? 
-                        (props.pageLength > props.maxPage ? props.maxPage : props.pageLength) : 
+                        (props.pageLength > props.maxPage ? 
+                            props.maxPage : props.pageLength) : 
                             (props.activePage + props.pageLength) > props.maxPage ? 
-                                props.maxPage : (props.activePage + props.pageLength);
+                                props.maxPage : 
+                            (props.activePage + props.pageLength);
 
     return(
         <>
