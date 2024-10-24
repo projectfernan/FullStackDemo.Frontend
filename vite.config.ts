@@ -10,6 +10,8 @@ export default defineConfig({
       '@IRegularButtonProps': resolve(__dirname,'src/types/components/common/buttons'),
       '@RegularButton': resolve(__dirname,'src/components/common/buttons/'),
       '@RegularButtonContext': resolve(__dirname,'src/context/components/common/buttons'),
+      '@IContentModalProps': resolve(__dirname,'src/types/components/common'),
+      '@ContentModal': resolve(__dirname, 'src/components/common/modals'),
       '@ContentModalContext': resolve(__dirname,'src/context/components/common/modals'),
       '@IApiBodyResponse': resolve(__dirname,'src/types/common'),
       '@ApiConstants': resolve(__dirname,'src/enums/'),

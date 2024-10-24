@@ -25,6 +25,8 @@
       "@RegularButtonContext/*": ["context/components/common/buttons/RegularButtonContext"],
       "@IRegularButtonProps/*": ["types/components/common/buttons/IRegularButtonProps"],
       "@RegularButton/*": ["components/common/buttons/RegularButton"],
+      "@IContentModalProps/*": ["types/components/common/IContentModalProps"],
+      "@ContentModal/*": ["components/common/modals/ContentModal"],
       "@ContentModalContext/*": ["context/components/common/modals/ContentModalContext"],
       "@IApiBodyResponse/*": ["types/common/IApiBodyResponse"],
       "@ApiConstants/*": ["enums/ApiConstants"],

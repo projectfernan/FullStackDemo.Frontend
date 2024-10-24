@@ -1,7 +1,7 @@
 import { useRegularButtonContext } from "@RegularButtonContext/RegularButtonContext";
 
 export const RegularButton = () => {
-    const { buttonIconClass, buttonClass ,buttonName ,buttonHandleClick } = useRegularButtonContext();
+    const { buttonIconClass, buttonClass ,buttonName , buttonHandleClick } = useRegularButtonContext();
 
     return(
         <>
